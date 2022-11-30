@@ -4,7 +4,9 @@ Dependencies and Imports
 const dotenv = require("dotenv");
 const express = require("express");
 const bodyParser = require("body-parser");
+
 // ROUTES
+const invoicesRoute = require("./routes/invoicesRoute");
 const subscriptionRoute = require("./routes/subscriptionRoute");
 
 // constants
@@ -20,6 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // use routes for subscriptionRoute
+app.use("/invoices", invoicesRoute);
 app.use("/subscriptions", subscriptionRoute);
 
 // for any endpoint that is not found, follow this route
