@@ -5,7 +5,7 @@ const getAllSubscriptionsController = async (req, res) => {
         limit,
         customer,
         price,
-        status,
+        subscription_status,
         starting_after,
         ending_before,
         current_period_start,
@@ -18,7 +18,7 @@ const getAllSubscriptionsController = async (req, res) => {
         limit,
         customer,
         price,
-        status,
+        status: subscription_status,
         starting_after,
         ending_before,
         current_period_start,
@@ -32,8 +32,8 @@ const getAllSubscriptionsController = async (req, res) => {
     return res.status(200).json({
         status: "success",
         data: subscriptions,
-        first_sub: subsData[0]?.id,
-        last_sub: subsData[subsData.length - 1]?.id,
+        lot_first_invoice: subsData[0]?.id,
+        lot_last_invoice: subsData[subsData.length - 1]?.id,
         count: subsData?.length,
         subscriptions: subsData,
     });

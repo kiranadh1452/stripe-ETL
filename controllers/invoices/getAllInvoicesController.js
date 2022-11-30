@@ -4,26 +4,26 @@ const getAllInvoicesController = async (req, res) => {
     const {
         limit,
         customer,
-        price,
-        status,
+        subscription,
+        invoice_status,
         starting_after,
         ending_before,
-        current_period_start,
-        current_period_end,
         created,
+        collection_method,
+        due_date,
     } = req.query;
 
     // fetch subscriptions data from stripe
     const fetchedData = await stripeHandler.retrieveAllInvoices({
         limit,
         customer,
-        price,
-        status,
+        subscription,
+        status: invoice_status,
         starting_after,
         ending_before,
-        current_period_start,
-        current_period_end,
         created,
+        collection_method,
+        due_date,
     });
 
     // send response
