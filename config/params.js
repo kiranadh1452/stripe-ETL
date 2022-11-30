@@ -1,16 +1,16 @@
-export const SUBSCRIPTION_PARAMS = [
+exports.SUBSCRIPTION_PARAMS = [
     "limit",
     "customer",
     "price",
     "status",
-    "start_after",
+    "starting_after",
     "ending_before",
     "current_period_start",
     "current_period_end",
     "created",
 ];
 
-export const SUBSCRIPTION_STATUS = [
+exports.SUBSCRIPTION_STATUS = [
     "active",
     "past_due",
     "unpaid",
@@ -22,7 +22,7 @@ export const SUBSCRIPTION_STATUS = [
     "ended",
 ];
 
-export const INVOICE_PARAMS = [
+exports.INVOICE_PARAMS = [
     "limit",
     "customer",
     "subscription",
@@ -34,7 +34,7 @@ export const INVOICE_PARAMS = [
     "due_date",
 ];
 
-export const INVOICE_STATUS = [
+exports.INVOICE_STATUS = [
     "draft",
     "open",
     "paid",
