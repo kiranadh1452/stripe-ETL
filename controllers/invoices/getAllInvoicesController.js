@@ -14,7 +14,7 @@ const getAllInvoicesController = async (req, res) => {
             due_date,
         } = req.query;
 
-        // fetch subscriptions data from stripe
+        // fetch invoices data from stripe
         const fetchedData = await stripeHandler.retrieveAllInvoices({
             limit,
             customer,
