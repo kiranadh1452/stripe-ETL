@@ -13,7 +13,7 @@ const getAllSubscriptionsController = async (req, res) => {
         } = req.query;
 
         // fetch charges data from stripe
-        const fetchedData = await stripeHandler.retrieveAllSubscriptions({
+        const fetchedData = await stripeHandler.retrieveAllCharges({
             limit,
             customer,
             created,

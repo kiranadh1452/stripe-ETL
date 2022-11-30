@@ -6,6 +6,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 // ROUTES
+const chargesRoute = require("./routes/chargesRoute");
 const invoicesRoute = require("./routes/invoicesRoute");
 const subscriptionRoute = require("./routes/subscriptionRoute");
 
@@ -22,6 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // use routes for subscriptionRoute
+app.use("/charges", chargesRoute);
 app.use("/invoices", invoicesRoute);
 app.use("/subscriptions", subscriptionRoute);
 
