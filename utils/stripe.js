@@ -254,6 +254,7 @@ exports.retrieveAllSubscriptions = async ({
     current_period_start,
     current_period_end,
     created,
+    expand,
 }) => {
     try {
         const subscriptions = await stripe.subscriptions.list({
@@ -266,6 +267,7 @@ exports.retrieveAllSubscriptions = async ({
             current_period_start,
             current_period_end,
             created,
+            expand,
         });
         return subscriptions;
     } catch (error) {
@@ -563,6 +565,7 @@ exports.retrieveAllInvoices = async ({
     due_date,
     ending_before,
     starting_after,
+    expand,
 }) => {
     try {
         const invoices = await stripe.invoices.list({
@@ -575,6 +578,7 @@ exports.retrieveAllInvoices = async ({
             due_date,
             ending_before,
             starting_after,
+            expand,
         });
         return invoices;
     } catch (error) {
@@ -604,6 +608,7 @@ exports.retrieveAllCharges = async ({
     starting_after,
     payment_intent,
     transfer_group,
+    expand,
 }) => {
     try {
         const charges = await stripe.charges.list({
@@ -614,6 +619,7 @@ exports.retrieveAllCharges = async ({
             starting_after,
             payment_intent,
             transfer_group,
+            expand,
         });
         return charges;
     } catch (error) {
